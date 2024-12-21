@@ -2,9 +2,7 @@ import CodeEditor from "./components/CodeEditor";
 import DescriptionWidget from "./components/Description";
 import { makeServer } from "./mirage/index"; 
 
-if ("development") {
-  console.log("server start");
-  
+if (import.meta.env.MODE === "development") {  
     makeServer(); 
 }
 
