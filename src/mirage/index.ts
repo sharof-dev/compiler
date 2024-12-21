@@ -7,6 +7,7 @@ export function makeServer() {
 
             this.post("/execute", (schema, request) => {
                 const { language, code } = JSON.parse(request.requestBody);
+                console.log(request);
                 
                 
                 if (!language || !code) {

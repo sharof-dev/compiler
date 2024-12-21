@@ -37,7 +37,6 @@ const CodeEditor = () => {
           theme="vs-dark"
           value={value}
           onChange={(newValue) => setValue(newValue)}
-          width="100vh"
         />
       </div>
       <div>

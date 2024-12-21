@@ -33,15 +33,16 @@ const Output: FC<OutputProps> = ({ editorRef, language }) => {
 
     try {
       setIsLoading(true);
-      // const res = await executeCode(language, source);
-      const { run } = await executeCode(language, source);
-      console.log(run);
+      const res = await executeCode(language, source);
+      // const { run } = await executeCode(language, source);
+      // console.log(run);
 
-      if (run) {
-        setOutput(run.output ? run.output.split("\n") : []);
-        setIsError(Boolean(run.error));
-        if (run.error) {
-          showToast(run.error, "error");
+      if (res) {
+        // setOutput(res.output ? res.output.split("\n") : []);
+        setOutput(res.output);
+        setIsError(Boolean(res.error));
+        if (res.error) {
+          showToast(res.error, "error");
         } else {
           showToast("Code executed successfully!", "success");
         }
